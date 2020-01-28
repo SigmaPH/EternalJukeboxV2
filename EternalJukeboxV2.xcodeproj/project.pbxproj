@@ -16,6 +16,7 @@
 		94769FE223E0AC960094AE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94769FE023E0AC960094AE0C /* LaunchScreen.storyboard */; };
 		94769FED23E0AC960094AE0C /* EternalJukeboxV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FEC23E0AC960094AE0C /* EternalJukeboxV2Tests.swift */; };
 		94769FF823E0AC960094AE0C /* EternalJukeboxV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FF723E0AC960094AE0C /* EternalJukeboxV2UITests.swift */; };
+		9476A00623E0ACDB0094AE0C /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9476A00523E0ACDA0094AE0C /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		94769FF323E0AC960094AE0C /* EternalJukeboxV2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EternalJukeboxV2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94769FF723E0AC960094AE0C /* EternalJukeboxV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EternalJukeboxV2UITests.swift; sourceTree = "<group>"; };
 		94769FF923E0AC960094AE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9476A00523E0ACDA0094AE0C /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		9476A00823E0AE7C0094AE0C /* Eternal Jukebox-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Eternal Jukebox-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9476A00623E0ACDB0094AE0C /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,9 +105,11 @@
 		94769FD223E0AC8F0094AE0C /* EternalJukeboxV2 */ = {
 			isa = PBXGroup;
 			children = (
+				9476A00523E0ACDA0094AE0C /* SpotifyiOS.framework */,
 				94769FD323E0AC8F0094AE0C /* AppDelegate.swift */,
 				94769FD523E0AC8F0094AE0C /* SceneDelegate.swift */,
 				94769FD723E0AC8F0094AE0C /* FirstViewController.swift */,
+				9476A00823E0AE7C0094AE0C /* Eternal Jukebox-Bridging-Header.h */,
 				94769FD923E0AC8F0094AE0C /* SecondViewController.swift */,
 				94769FDB23E0AC8F0094AE0C /* Main.storyboard */,
 				94769FDE23E0AC960094AE0C /* Assets.xcassets */,
@@ -440,13 +446,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5HJBJHJMF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EternalJukeboxV2",
+				);
 				INFOPLIST_FILE = EternalJukeboxV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = OrangeTeam.EternalJukeboxV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EternalJukeboxV2/Eternal Jukebox-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,13 +470,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5HJBJHJMF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EternalJukeboxV2",
+				);
 				INFOPLIST_FILE = EternalJukeboxV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = OrangeTeam.EternalJukeboxV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EternalJukeboxV2/Eternal Jukebox-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
