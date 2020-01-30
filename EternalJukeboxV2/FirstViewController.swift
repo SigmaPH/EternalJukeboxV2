@@ -41,9 +41,28 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         super.viewDidLoad()
         
     }
-
+    // MARK: -UI Element Links to Function
     @IBAction func LoginButton(_ sender: Any) {
+    let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
+     
+    if #available(iOS 11, *) {
+               // Use this on iOS 11 and above to take advantage of SFAuthenticationSession
+        sessionManager.initiateSession(with: scope, options: .clientOnly)
+    } else {
+               // Use this on iOS versions < 11 to use SFSafariViewController
+        sessionManager.initiateSession(with: scope, options: .clientOnly, presenting: self)
+           }
     }
+    
+    @IBAction func PlayPauseButton(_ sender: Any) {
+        //if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused {
+           //     appRemote.playerAPI?.resume(nil)
+           // } else {
+         //       appRemote.playerAPI?.pause(nil)
+          //  }
+        }
+    
+    
     
     // MARK: - SPTSessionManagerDelegate
     
@@ -63,30 +82,30 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     // MARK: -SPTAppRemoteDelegate
     
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
-        updateViewBasedOnConnected()
+        //updateViewBasedOnConnected()
         appRemote.playerAPI?.delegate = self
         appRemote.playerAPI?.subscribe(toPlayerState: { (success, error) in
             if let error = error {
                 print("Error subscribing to player state:" + error.localizedDescription)
             }
         })
-        fetchPlayerState()
+        ///fetchPlayerState()
     }
 
     func appRemote(_ appRemote: SPTAppRemote, didDisconnectWithError error: Error?) {
-        updateViewBasedOnConnected()
+        //updateViewBasedOnConnected()
         lastPlayerState = nil
     }
 
     func appRemote(_ appRemote: SPTAppRemote, didFailConnectionAttemptWithError error: Error?) {
-        updateViewBasedOnConnected()
+        //updateViewBasedOnConnected()
         lastPlayerState = nil
     }
     
     //MARK: - SPTAppRemotePlayerAPIDelegate
     
     func playerStateDidChange(_ playerState: SPTAppRemotePlayerState) {
-        update(playerState: playerState)
+        //update(playerState: playerState)
     }
     
     //MARK: -Private Helpers
