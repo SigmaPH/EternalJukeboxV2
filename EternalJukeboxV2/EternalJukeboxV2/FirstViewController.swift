@@ -41,6 +41,8 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         super.viewDidLoad()
         
     }
+    
+    
     // MARK: -UI Element Links to Function
     @IBAction func LoginButton(_ sender: Any) {
     let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
@@ -54,13 +56,24 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
            }
     }
     
-    @IBAction func PlayPauseButton(_ sender: Any) {
-        //if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused {
-           //     appRemote.playerAPI?.resume(nil)
-           // } else {
-         //       appRemote.playerAPI?.pause(nil)
-          //  }
+    
+    
+    @IBAction func newOneBro(_ sender: Any) {
+        if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused{
+            appRemote.playerAPI?.resume(nil)
+        }else{
+            appRemote.playerAPI?.pause(nil)
         }
+        appRemote.playerAPI?.resume(nil)
+    }
+    
+    //@IBAction func playOrPauseButton(_ sender: Any) {
+        //if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused {
+                       //appRemote.playerAPI?.resume(nil)
+                 //  } else {
+                      // appRemote.playerAPI?.pause(nil)
+                  // }
+    //}
     
     
     
@@ -89,8 +102,16 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
                 print("Error subscribing to player state:" + error.localizedDescription)
             }
         })
-        ///fetchPlayerState()
+        fetchPlayerState()
     }
+    
+    func fetchPlayerState() {
+        appRemote.playerAPI?.getPlayerState({ (playerState, error) in
+                let playerState = playerState as? SPTAppRemotePlayerState
+                //update(playerState: playerState)
+        })
+    }
+    
 
     func appRemote(_ appRemote: SPTAppRemote, didDisconnectWithError error: Error?) {
         //updateViewBasedOnConnected()
@@ -105,6 +126,7 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     //MARK: - SPTAppRemotePlayerAPIDelegate
     
     func playerStateDidChange(_ playerState: SPTAppRemotePlayerState) {
+        
         //update(playerState: playerState)
     }
     

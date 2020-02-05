@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate/*, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate */{
 
     /*I think these two variables do something.
     I just added them because it muted some bugs in the code.
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAppRemoteDelegate, SPT
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
+ /*
 //Beginning of Added Code
     
     //Instantiating SPTConfiguration using my clientID and RedirectURL
@@ -110,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAppRemoteDelegate, SPT
     }
     
  //Ending of added code
-
+*/
 
 }
 
