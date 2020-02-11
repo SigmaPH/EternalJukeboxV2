@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAppRemoteDelegate, SPT
     
     //Instantiating SPTConfiguration using my clientID and RedirectURL
     let SpotifyClientID = "ece2e7fdbb0c43938876a3926c2143de"
-    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    let SpotifyRedirectURL = URL(string: "EternalJukeboxV2://SpotifyAuthentication")!
 
     lazy var configuration = SPTConfiguration(
       clientID: SpotifyClientID,

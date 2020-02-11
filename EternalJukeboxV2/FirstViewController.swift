@@ -10,8 +10,8 @@ import UIKit
 
 class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
     
-    fileprivate let SpotifyClientID = "ece2e7fdbb0c43938876a3926c2143de"
-    fileprivate let SpotifyRedirectURI = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    fileprivate let SpotifyClientID = "d9f3190f802641938b898e9a418faf9e"
+    fileprivate let SpotifyRedirectURI = URL(string: "EternalJukeboxV2://SpotifyAuthentication")!
     
     lazy var configuration: SPTConfiguration = {
         let configuration = SPTConfiguration(clientID: SpotifyClientID, redirectURL: SpotifyRedirectURI)
