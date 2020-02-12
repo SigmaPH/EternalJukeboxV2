@@ -55,13 +55,13 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     }
     
     @IBAction func PlayPauseButton(_ sender: Any) {
-        //if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused {
-           //     appRemote.playerAPI?.resume(nil)
-           // } else {
-         //       appRemote.playerAPI?.pause(nil)
-          //  }
+            
         }
-    
+    private func skipNext() {
+        appRemote.playerAPI?.skip(toNext: <#T##SPTAppRemoteCallback?##SPTAppRemoteCallback?##(Any?, Error?) -> Void#>)
+            
+        })
+    }
     
     
     // MARK: - SPTSessionManagerDelegate
@@ -76,6 +76,7 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
 
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
         appRemote.connectionParameters.accessToken = session.accessToken
+        //connects the appRemote
         appRemote.connect()
     }
     
